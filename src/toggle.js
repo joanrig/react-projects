@@ -15,9 +15,7 @@ class Toggle extends Component {
   render(){
     return (
       <div>
-        {this.state.on && (
-          <h1>Toggle Me</h1>
-        )}
+        {this.state.on && (this.props.children)}
         <button onClick = {this.toggle}>Show/Hide</button>
       </div>
     )

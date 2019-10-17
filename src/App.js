@@ -9,7 +9,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <Toggle />
+      <Toggle>
+        <h1>Hello</h1>
+      </Toggle>
     </div>
   );
 }
