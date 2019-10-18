@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Toggle from './Toggle'
+import Toggle from './ToggleRenderProps'
 
 function App() {
   return (
@@ -9,9 +9,14 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <Toggle>
-        <h1>Hello</h1>
-      </Toggle>
+      <Toggle
+        render={({on, toggle}) => (
+        <div>
+          {on && <h1>Show Me</h1>}
+          <button onclick={toggle}>Show / Hide </button>
+        </div>
+        )}
+      />
     </div>
   );
 }
