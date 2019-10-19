@@ -13,7 +13,7 @@ function App() {
         render={({on, toggle}) => (
         <div>
           {on && <h1>Show Me</h1>}
-          <button onclick={toggle}>Show / Hide </button>
+          <button onClick={toggle}>Show / Hide </button>
         </div>
 
         )}
