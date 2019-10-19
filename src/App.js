@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Toggle from './ToggleRenderProps'
+import Toggle from './ToggleRPC'
 
 function App() {
   return (
@@ -9,19 +9,17 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <Toggle
-        render={({on, toggle}) => (
+      <Toggle>
+        {({ on, toggle }) => (
         <div>
           {on && <h1>Show Me</h1>}
           <button onClick={toggle}>Show / Hide </button>
         </div>
-
-        )}
-      />
+      )}
+      </Toggle>
     </div>
-  );
+  )
+
 }
 
 export default App;
-
-//updated email
