@@ -18,7 +18,7 @@ function App() {
           <>
             <button onClick={toggle}>Login</button>
             <Modal on={on} toggle={toggle}>
-              <h1>Still in Modal</h1>
+              <h1>Still what's up this is Joan</h1>
             </Modal>
           </>
 

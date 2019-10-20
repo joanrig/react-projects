@@ -1,24 +1,26 @@
-import React, { Component } from 'react'
-import Portal from './Portal'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Portal from './Portal';
+import Icon from './Utilities/Icon';
 
 export default class Modal extends Component {
-  render(){
-
-    const { children, toggle, on } = this.props
-    return(
+  render() {
+    const { children, toggle, on } = this.props;
+    return (
       <Portal>
         {on && (
           <ModalWrapper>
             <ModalCard>
-              <CloseButton onClick={toggle}>Close</CloseButton>
+              <CloseButton onClick={toggle}>
+                <Icon name="close" />
+              </CloseButton>
               <div>{children}</div>
             </ModalCard>
-            <Background onClick={toggle}/>
+            <Background onClick={toggle} />
           </ModalWrapper>
         )}
       </Portal>
-    )
+    );
   }
 }
 
@@ -38,14 +40,19 @@ const ModalCard = styled.div`
   background: white;
   border-radius: 5px;
   padding: 15px;
+  min-width: 320px;
   z-index: 10;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 100px;
 `;
 
 const CloseButton = styled.button`
   position: absolute;
   top: 0;
   right: 0;
+  border: none;
+  background: transparent;
+  padding: 10px;
 `;
 
 const Background = styled.div`
@@ -54,5 +61,6 @@ const Background = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  background: black;
+  opacity: 0.5;
 `;
