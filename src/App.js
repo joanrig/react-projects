@@ -12,17 +12,16 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <Modal />
+
       <Toggle>
         {({ on, toggle }) => (
-        <>
-          {on && <h1>Show Me</h1>}
-          <button onClick={toggle}>Show / Hide </button>
-          <Portal>
-            {on && <h1>Hi I'm in a portal!</h1>}
-          </Portal>
+          <>
+            <button onClick={toggle}>Login</button>
+            <Modal on={on} toggle={toggle}>
+              <h1>Still in Modal</h1>
+            </Modal>
+          </>
 
-        </>
       )}
       </Toggle>
 
